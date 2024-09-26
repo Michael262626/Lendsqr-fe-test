@@ -3,7 +3,7 @@ import logo from "../../src/images/Group.svg";
 import image from "../../src/images/pablo-sign-in 1.svg";
 import "./input.scss";
 
-const Signup: React.FC = () => {
+const SignIn: React.FC = () => {
     return (
         <div className="logo">
             <div>
@@ -28,4 +28,4 @@ const Signup: React.FC = () => {
     );
 };
 
-export default Signup;
+export default SignIn;
