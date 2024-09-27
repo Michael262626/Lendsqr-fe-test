@@ -13,7 +13,9 @@ const SignIn: React.FC = () => {
     return (
         <div className="logo">
             <div>
-                <img src={logo} alt="Logo" />
+                <div className="clogo">
+                    <img src={logo} alt="Logo" />
+                </div>
                 <div className="image">
                     <img src={image} alt="Sign In Illustration" />
                 </div>
