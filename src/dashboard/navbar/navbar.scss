@@ -1,4 +1,9 @@
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,18 +24,20 @@
       border-radius: 4px;
       width: 300px;
     }
+
     .search {
       align-items: center;
       display: flex;
       img {
         height: 33px;
-        margin-left: -22px;
+        margin-left: -25px;
       }
     }
+
     .search-bar {
       display: flex;
       align-items: center;
-      img{
+      img {
         margin-left: -70px;
         width: 10px;
         height: 10px;
@@ -72,11 +79,12 @@
         color: #586f9d;
       }
     }
-    .dropdown{
+
+    .dropdown {
       display: flex;
       align-items: center;
 
-      img{
+      img {
         width: 5px;
         height: 5px;
         margin-left: -25px;
