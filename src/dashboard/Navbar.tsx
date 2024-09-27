@@ -5,7 +5,7 @@ import bell from "../../src/images/Vector (2).png";
 import dropDownIcon  from "../../src/images/drop.png"
 import profile from "../../src/images/image 4.png";
 import searchBar from "../../src/images/Rectangle 9.png"
-import "./dashboard.scss";
+import "./navbar.scss";
 
 const Navbar: React.FC = () => {
     return (
