@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./leftbar.scss";
+import { Link } from "react-router-dom";
 import logo from "../../src/images/briefcase.png";
 import guarantor from "../../src/images/gurantor.png"
 import handshake from "../../src/images/handshake.png"
@@ -48,8 +49,10 @@ const LeftSideBar: React.FC = () => {
             {isOpen && (
                 <div>
                     <div className="dropdown-content">
-                        <img src={home} alt=""/>
-                        <h5>Dashboard</h5>
+                        <Link to="/userdashboard" className="dropdown-link">
+                            <img src={home} alt="Home" />
+                            <h5>Dashboard</h5>
+                        </Link>
                     </div>
                     <h6>CUSTOMERS</h6>
                     <div className="dropdown-content2">

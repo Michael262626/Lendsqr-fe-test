@@ -27,6 +27,15 @@
     gap: 10px;
     color: #586f9d;
     align-items: center;
+
+    .dropdown-link {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      transition: background-color 0.3s;
+    }
   }
   h6{
     color: #586f9d;
