@@ -1,10 +1,10 @@
 import React from "react";
-import image from "../../src/images/Group.svg";
-import searchIcon from "../../src/images/Vector (3).png"
-import bell from "../../src/images/Vector (2).png";
-import dropDownIcon  from "../../src/images/drop.png"
-import profile from "../../src/images/image 4.png";
-import searchBar from "../../src/images/Rectangle 9.png"
+import image from "../../images/Group.svg";
+import searchIcon from "../../images/Vector (3).png"
+import bell from "../../images/Vector (2).png";
+import dropDownIcon  from "../../images/drop.png"
+import profile from "../../images/image 4.png";
+import searchBar from "../../images/Rectangle 9.png"
 import "./navbar.scss";
 
 const Navbar: React.FC = () => {

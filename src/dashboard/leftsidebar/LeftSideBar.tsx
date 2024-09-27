@@ -1,33 +1,31 @@
 import React, { useState } from "react";
 import "./leftbar.scss";
 import { Link } from "react-router-dom";
-import logo from "../../src/images/briefcase.png";
-import guarantor from "../../src/images/gurantor.png"
-import handshake from "../../src/images/handshake.png"
-import savings from "../../src/images/savings.png"
-import clipboard from "../../src/images/clipboard.png"
-import account from "../../src/images/account.png"
-import badge from "../../src/images/basge.png"
-import reports from "../../src/images/reports.png"
-import preferences from "../../src/images/preferences.png"
-import services from "../../src/images/galaxy.png"
-import request from "../../src/images/request.png"
-import fees from "../../src/images/fees.png"
-import transaction from "../../src/images/transaction.png"
-import bank from "../../src/images/bank.png"
-import settlement from "../../src/images/settlements.png"
-import karma from "../../src/images/karma.png"
-import whiteList from "../../src/images/white-list.png"
-import loans from "../../src/images/loans.png"
-import user from "../../src/images/user.png"
-import home from "../../src/images/home.png";
-import drop from "../../src/images/dropdown.png";
+import logo from "../../images/briefcase.png";
+import guarantor from "../../images/gurantor.png"
+import handshake from "../../images/handshake.png"
+import savings from "../../images/savings.png"
+import clipboard from "../../images/clipboard.png"
+import account from "../../images/account.png"
+import badge from "../../images/basge.png"
+import reports from "../../images/reports.png"
+import preferences from "../../images/preferences.png"
+import services from "../../images/galaxy.png"
+import request from "../../images/request.png"
+import fees from "../../images/fees.png"
+import transaction from "../../images/transaction.png"
+import bank from "../../images/bank.png"
+import settlement from "../../images/settlements.png"
+import karma from "../../images/karma.png"
+import whiteList from "../../images/white-list.png"
+import loans from "../../images/loans.png"
+import user from "../../images/user.png"
+import home from "../../images/home.png";
+import drop from "../../images/dropdown.png";
 
 const LeftSideBar: React.FC = () => {
-    // State to control dropdown visibility
     const [isOpen, setIsOpen] = useState(false);
 
-    // Function to toggle dropdown
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
     };
