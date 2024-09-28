@@ -10,6 +10,7 @@ import menuImage from "../../../src/images/menu.png";
 import coinsImage from "../../../src/images/coins.png";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const organisations = ["Lendsqr", "irorun", "Lendstar"];
 const statuses = ["Inactive", "Pending", "Blacklisted", "Active"];
@@ -81,11 +82,13 @@ const MainBar = () => {
         <div className="main">
             <h2>Users</h2>
             <div className="blocks">
-                <div className="first-block">
-                    <img src={usersImage} alt="Total Users" />
-                    <h6>USERS</h6>
-                    <h3>2,453</h3>
-                </div>
+                <Link to="/user-details" className="link">
+                    <div className="first-block">
+                        <img src={usersImage} alt="Total Users" />
+                        <h6>USERS</h6>
+                        <h3>2,453</h3>
+                    </div>
+                </Link>
                 <div className="first-block">
                     <img src={activeImage} alt="Active Users" />
                     <h6>ACTIVE USERS</h6>

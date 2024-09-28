@@ -5,6 +5,10 @@
   h6, h3, h2 {
     color: #213f7d;
   }
+  .link {
+    text-decoration: none;
+    color: inherit;
+  }
 
   .blocks {
     display: flex;
@@ -71,6 +75,7 @@
       align-items: center;
       gap: 30px;
     }
+
 
     button {
       padding: 10px 25px;

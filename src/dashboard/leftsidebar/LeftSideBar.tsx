@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./leftbar.scss";
 import { Link } from "react-router-dom";
+import messages from "../../images/tire.png"
 import logo from "../../images/briefcase.png";
+import logout from "../../images/sign-out.png"
 import guarantor from "../../images/gurantor.png"
 import handshake from "../../images/handshake.png"
 import savings from "../../images/savings.png"
@@ -33,7 +35,7 @@ const LeftSideBar: React.FC = () => {
     return (
         <div className="left-side-bar">
             <div className="img-txt">
-                <img src={logo} alt="Logo" />
+                <img src={logo} alt="Logo"/>
                 <h5>Switch Organisation</h5>
                 <img
                     src={drop}
@@ -48,7 +50,7 @@ const LeftSideBar: React.FC = () => {
                 <div>
                     <div className="dropdown-content">
                         <Link to="/userdashboard" className="dropdown-link">
-                            <img src={home} alt="Home" />
+                            <img src={home} alt="Home"/>
                             <h5>Dashboard</h5>
                         </Link>
                     </div>
@@ -136,8 +138,16 @@ const LeftSideBar: React.FC = () => {
                         <img src={clipboard} alt=""/>
                         <h5>Audit Logs</h5>
                     </div>
+                    <div className="dropdown-content3">
+                        <img src={messages} alt=""/>
+                        <h5>System Messages</h5>
+                    </div>
                 </div>
             )}
+            <div className="dropdown-content4">
+                <img src={logout} alt=""/>
+                <h5>Logout</h5>
+            </div>
         </div>
     );
 };
