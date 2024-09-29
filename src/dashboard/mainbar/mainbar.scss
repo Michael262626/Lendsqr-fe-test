@@ -206,30 +206,30 @@
     padding: 30px;
     margin-top: 15px;
     justify-content: center;
-    width: 50%; // Full width on mobile
+    width: 50%;
 
     .blocks {
-      flex-direction: column; // Stack blocks vertically
-      gap: 20px; // Reduce gap
+      flex-direction: column;
+      gap: 20px;
 
       .link {
         width: 100%;
-        margin-left: -160px; // Reset margin for links
+        margin-left: -160px;
       }
 
       .first-block {
-        width: 150%; // Full width on mobile
-        height: auto; // Auto height
+        width: 150%;
+        height: auto;
       }
     }
 
     .filter-section {
       position: relative;
       background-color: #f4f0f0;
-      width: 100%; // Full width on mobile
-      margin-left: 5px; // Remove left margin
-      margin-bottom: -550px; // Add some top margin
-      padding: 15px; // Reduce padding
+      width: 100%;
+      margin-left: 5px;
+      margin-bottom: -550px;
+      padding: 15px;
     }
 
     .user-list {
@@ -238,13 +238,13 @@
       display: flex;
       border-radius: 10px;
       background-color: #ffffff;
-      width: 150%; // Full width for user list
+      width: 150%;
 
       table {
-        display: none; // Hide the table on mobile
+        display: none;
       }
       .mobile-column {
-        display: block; // Show mobile column on mobile
+        display: block;
       }
       .menu-icon{
         margin-left: 330px;
