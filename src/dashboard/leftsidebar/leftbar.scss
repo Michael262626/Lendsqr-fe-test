@@ -36,7 +36,6 @@
     }
   }
 
-  // Dropdown content: always takes space to prevent shrinking
   .dropdown-wrapper {
     overflow: hidden;
     transition: max-height 0.3s ease;
@@ -123,7 +122,7 @@
     padding: 20px;
 
     .dropdown-wrapper {
-      max-height: none; // Ensure content is always visible
+      max-height: none;
     }
   }
 
