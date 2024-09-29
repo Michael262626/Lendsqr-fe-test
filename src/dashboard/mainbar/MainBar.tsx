@@ -1,16 +1,16 @@
 import "./mainbar.scss";
 import usersImage from "../../../src/images/users.png";
-import detailImage from "../../../src/images/np_view_1214519_000000 1.png"
-import activateImage from "../../../src/images/np_user_2995993_000000 1.png"
+import detailImage from "../../../src/images/np_view_1214519_000000 1.png";
+import activateImage from "../../../src/images/np_user_2995993_000000 1.png";
 import activeImage from "../../../src/images/active.png";
-import blacklistImage from "../../../src/images/np_delete-friend_3248001_000000 1.png"
+import blacklistImage from "../../../src/images/np_delete-friend_3248001_000000 1.png";
 import filterImage from "../../../src/images/filter.png";
 import loansImage from "../../../src/images/userloans.png";
 import menuImage from "../../../src/images/menu.png";
 import coinsImage from "../../../src/images/coins.png";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const organisations = ["Lendsqr", "irorun", "Lendstar"];
 const statuses = ["Inactive", "Pending", "Blacklisted", "Active"];
@@ -35,10 +35,10 @@ const MainBar = () => {
             try {
                 const response = await axios.get(API_URL, {
                     headers: {
-                        Authorization: "Bearer c2w9cbpypi426epl9e9core9vnngxwhcuf506246" // Replace with actual API key if needed
+                        Authorization: "Bearer c2w9cbpypi426epl9e9core9vnngxwhcuf506246"
                     },
                 });
-                setData(response.data); // Set the fetched data to state
+                setData(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
@@ -54,7 +54,6 @@ const MainBar = () => {
     const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
     };
-
 
     const applyFilters = () => {
         const filteredData = data.filter(user => {
@@ -72,8 +71,8 @@ const MainBar = () => {
 
     const resetFilters = () => {
         setFilters({ organisation: '', username: '', email: '', phoneNumber: '', date: '', status: '' });
-
     };
+
     const handleMenuToggle = (id: number) => {
         setOpenMenu(openMenu === id ? null : id);
     };
@@ -106,7 +105,6 @@ const MainBar = () => {
                 </div>
             </div>
 
-            {/* Display Filter Inputs if Filter is Visible */}
             {filterVisible && (
                 <div className="filter-section">
                     <h5>Organisation</h5>
@@ -183,32 +181,33 @@ const MainBar = () => {
 
             {/* Display User Data from API */}
             <div className="user-list">
-                <table>
+                {/* Table for Desktop View */}
+                <table className="desktop-table">
                     <thead>
                     <tr>
                         <th onClick={toggleFilter}>
                             Organisation
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                         <th>
                             Username
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                         <th>
                             Email
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                         <th>
                             Phone Number
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                         <th>
                             Date Joined
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                         <th>
                             Status
-                            <img src={filterImage} alt="Filter icon" className="filter-icon"/>
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" />
                         </th>
                     </tr>
                     </thead>
@@ -221,12 +220,12 @@ const MainBar = () => {
                             <td>{user.phoneNumber}</td>
                             <td>{user.date}</td>
                             <td>
-                        <span className={`status-badge ${user.status.toLowerCase()}`}>
-                            {user.status}
-                        </span>
+                                    <span className={`status-badge ${user.status.toLowerCase()}`}>
+                                        {user.status}
+                                    </span>
                             </td>
                             <td>
-                                <div style={{position: 'relative'}}>
+                                <div style={{ position: 'relative' }}>
                                     <img
                                         src={menuImage}
                                         alt="Menu"
@@ -236,15 +235,15 @@ const MainBar = () => {
                                     {openMenu === user.id && (
                                         <div className="dropdown-menu">
                                             <div className="menu-item">
-                                                <img src={detailImage} alt="View" style={{marginRight: '8px'}}/>
+                                                <img src={detailImage} alt="View" style={{ marginRight: '8px' }} />
                                                 View Details
                                             </div>
                                             <div className="menu-item">
-                                                <img src={blacklistImage} alt="Blacklist" style={{marginRight: '8px', marginTop: '5px'}}/>
+                                                <img src={blacklistImage} alt="Blacklist" style={{ marginRight: '8px', marginTop: '5px' }} />
                                                 Blacklist User
                                             </div>
                                             <div className="menu-item">
-                                                <img src={activateImage} alt="Activate" style={{marginRight: '8px', marginTop: '5px'}}/>
+                                                <img src={activateImage} alt="Activate" style={{ marginRight: '8px', marginTop: '5px' }} />
                                                 Activate User
                                             </div>
                                         </div>
@@ -255,6 +254,49 @@ const MainBar = () => {
                     ))}
                     </tbody>
                 </table>
+
+                {/* Column Display for Mobile View */}
+                <div className="mobile-column">
+                    {data.map(user => (
+                        <div className="user-card" key={user.id}>
+                            <img
+                                src={menuImage}
+                                alt="Menu"
+                                className="menu-icon"
+                                onClick={() => handleMenuToggle(user.id)}
+                            />
+                            <img src={filterImage} alt="Filter icon" className="filter-icon" onClick={toggleFilter}/>
+                            <p><strong>Organisation:</strong> {user.organisation}</p>
+                            <p><strong>Username:</strong> {user.username}</p>
+                            <p><strong>Email:</strong> {user.email}</p>
+                            <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
+                            <p><strong>Date Joined:</strong> {user.date}</p>
+                            <p>
+                                <span className={`status-badge ${user.status.toLowerCase()}`}>
+                                    {user.status}
+                                </span>
+                            </p>
+                            {openMenu === user.id && (
+                                <div className="dropdown-menu">
+                                    <div className="menu-item">
+                                        <img src={detailImage} alt="View" style={{marginRight: '8px'}}/>
+                                        View Details
+                                    </div>
+                                    <div className="menu-item">
+                                        <img src={blacklistImage} alt="Blacklist"
+                                             style={{marginRight: '8px', marginTop: '5px'}}/>
+                                        Blacklist User
+                                    </div>
+                                    <div className="menu-item">
+                                        <img src={activateImage} alt="Activate"
+                                             style={{marginRight: '8px', marginTop: '5px'}}/>
+                                        Activate User
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

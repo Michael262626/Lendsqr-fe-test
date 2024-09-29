@@ -5,6 +5,7 @@
   h6, h3, h2 {
     color: #213f7d;
   }
+
   .link {
     text-decoration: none;
     color: inherit;
@@ -14,6 +15,7 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap; // Allow wrapping on smaller screens
 
     .first-block {
       align-items: center;
@@ -53,11 +55,12 @@
       font-size: 12px;
       color: #333;
       cursor: pointer;
+
+      option:first-child {
+        color: #aaa;
+      }
     }
 
-    .select-dropdown option:first-child {
-      color: #aaa;
-    }
     input {
       margin-bottom: 10px;
       padding: 10px;
@@ -70,39 +73,40 @@
         border-color: #213f7d;
       }
     }
-    .btn{
+
+    .btn {
       display: flex;
       align-items: center;
       gap: 30px;
-    }
 
+      button {
+        padding: 10px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 10px;
+        margin-top: 10px;
 
-    button {
-      padding: 10px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 10px;
-      margin-top: 10px;
+        &:first-child {
+          background-color: #e0e0e0;
+          color: black;
+        }
 
-      &:first-child {
-        background-color: #e0e0e0;
-        color: black;
-      }
+        &:last-child {
+          background-color: #39cdcc;
+          color: #e0e0e0;
+        }
 
-      &:last-child {
-        background-color: #39cdcc;
-        color: #e0e0e0;
-      }
-
-      &:hover {
-        opacity: 0.9;
+        &:hover {
+          opacity: 0.9;
+        }
       }
     }
   }
 
   .user-list {
     margin-top: 100px;
+
     table {
       width: 100%;
       background-color: #ffffff;
@@ -113,8 +117,6 @@
 
       thead {
         tr {
-
-
           th {
             position: relative;
             padding: 10px;
@@ -148,10 +150,12 @@
           }
         }
       }
+
       .menu-icon {
         width: 20px;
         cursor: pointer;
       }
+
       .dropdown-menu {
         position: absolute;
         margin-left: -120px;
@@ -163,7 +167,7 @@
         height: 60px;
         padding: 10px 5px;
       }
-      }
+    }
 
     .status-badge {
       padding: 7px 10px;
@@ -190,6 +194,76 @@
       &.blacklisted {
         background-color: #e3c2c2;
         color: #d32f2f;
+      }
+    }
+    .mobile-column{
+      display: none;
+    }
+  }
+
+  // Mobile styles
+  @media (max-width: 768px) {
+    padding: 30px;
+    margin-top: 15px;
+    justify-content: center;
+    width: 50%; // Full width on mobile
+
+    .blocks {
+      flex-direction: column; // Stack blocks vertically
+      gap: 20px; // Reduce gap
+
+      .link {
+        width: 100%;
+        margin-left: -160px; // Reset margin for links
+      }
+
+      .first-block {
+        width: 150%; // Full width on mobile
+        height: auto; // Auto height
+      }
+    }
+
+    .filter-section {
+      position: relative;
+      background-color: #f4f0f0;
+      width: 100%; // Full width on mobile
+      margin-left: 5px; // Remove left margin
+      margin-bottom: -550px; // Add some top margin
+      padding: 15px; // Reduce padding
+    }
+
+    .user-list {
+      margin-top: 20px;
+      padding: 20px;
+      display: flex;
+      border-radius: 10px;
+      background-color: #ffffff;
+      width: 150%; // Full width for user list
+
+      table {
+        display: none; // Hide the table on mobile
+      }
+      .mobile-column {
+        display: block; // Show mobile column on mobile
+      }
+      .menu-icon{
+        margin-left: 330px;
+        margin-bottom: -50px;
+      }
+      .filter-icon{
+        margin-left: 200px;
+        margin-bottom: -35px;
+      }
+      .dropdown-menu {
+        margin-left: 220px;
+        margin-top: -190px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        z-index: 1000;
+        width: 120px;
+        height: 60px;
+        padding: 10px 5px;
       }
     }
   }
