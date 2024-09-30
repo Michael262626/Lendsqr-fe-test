@@ -226,7 +226,7 @@
     .filter-section {
       position: relative;
       background-color: #f4f0f0;
-      width: 100%;
+      width: 130%;
       margin-left: 5px;
       margin-bottom: -550px;
       padding: 15px;
@@ -255,14 +255,15 @@
         margin-bottom: -35px;
       }
       .dropdown-menu {
-        margin-left: 220px;
-        margin-top: -190px;
+        position: absolute;
+        margin-left: 150px;
+        margin-top: -180px;
+        margin-bottom: 60px;
         background-color: white;
         border: 1px solid #ccc;
         border-radius: 4px;
         z-index: 1000;
         width: 120px;
-        height: 60px;
         padding: 10px 5px;
       }
     }

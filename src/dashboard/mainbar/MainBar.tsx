@@ -9,8 +9,8 @@ import loansImage from "../../../src/images/userloans.png";
 import menuImage from "../../../src/images/menu.png";
 import coinsImage from "../../../src/images/coins.png";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const organisations = ["Lendsqr", "irorun", "Lendstar"];
 const statuses = ["Inactive", "Pending", "Blacklisted", "Active"];

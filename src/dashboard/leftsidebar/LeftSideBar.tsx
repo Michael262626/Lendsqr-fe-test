@@ -41,11 +41,11 @@ const LeftSideBar: React.FC = () => {
         <div>
             {/* Hamburger Icon for mobile view */}
             <div className="hamburger" onClick={toggleSidebar}>
-                &#9776; {/* Unicode for hamburger icon */}
+                {isSidebarOpen ? '✖' : '☰'}
             </div>
-            <div className={`left-side-bar ${isSidebarOpen ? 'open' : 'closed'}`}>
+            <div className={`left-side-bar ${isSidebarOpen ? 'open' : 'closed'}`} data-testid="left-sidebar">
                 <div className="img-txt">
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} alt="Logo"/>
                     <h5>Switch Organisation</h5>
                     <img
                         src={drop}
@@ -60,24 +60,24 @@ const LeftSideBar: React.FC = () => {
                     <div>
                         <div className="dropdown-content">
                             <Link to="/userdashboard" className="dropdown-link">
-                                <img src={home} alt="Home" />
+                                <img src={home} alt="Home"/>
                                 <h5>Dashboard</h5>
                             </Link>
                         </div>
                         <h6>CUSTOMERS</h6>
                         {/* Customer Links */}
                         {[
-                            { src: user, label: "Users" },
-                            { src: guarantor, label: "Guarantors" },
-                            { src: loans, label: "Loans" },
-                            { src: handshake, label: "Decision Models" },
-                            { src: savings, label: "Savings" },
-                            { src: request, label: "Loan Requests" },
-                            { src: whiteList, label: "Whitelist" },
-                            { src: karma, label: "Karma" },
+                            {src: user, label: "Users"},
+                            {src: guarantor, label: "Guarantors"},
+                            {src: loans, label: "Loans"},
+                            {src: handshake, label: "Decision Models"},
+                            {src: savings, label: "Savings"},
+                            {src: request, label: "Loan Requests"},
+                            {src: whiteList, label: "Whitelist"},
+                            {src: karma, label: "Karma"},
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label} />
+                                <img src={item.src} alt={item.label}/>
                                 <h5>{item.label}</h5>
                             </div>
                         ))}
@@ -85,18 +85,18 @@ const LeftSideBar: React.FC = () => {
                         <h6>BUSINESS</h6>
                         {/* Business Links */}
                         {[
-                            { src: logo, label: "Organisation" },
-                            { src: request, label: "Loan Products" },
-                            { src: bank, label: "Savings Products" },
-                            { src: fees, label: "Fees and Charges" },
-                            { src: transaction, label: "Transactions" },
-                            { src: services, label: "Services" },
-                            { src: account, label: "Services Account" },
-                            { src: settlement, label: "Settlements" },
-                            { src: reports, label: "Reports" },
+                            {src: logo, label: "Organisation"},
+                            {src: request, label: "Loan Products"},
+                            {src: bank, label: "Savings Products"},
+                            {src: fees, label: "Fees and Charges"},
+                            {src: transaction, label: "Transactions"},
+                            {src: services, label: "Services"},
+                            {src: account, label: "Services Account"},
+                            {src: settlement, label: "Settlements"},
+                            {src: reports, label: "Reports"},
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label} />
+                                <img src={item.src} alt={item.label}/>
                                 <h5>{item.label}</h5>
                             </div>
                         ))}
@@ -104,20 +104,20 @@ const LeftSideBar: React.FC = () => {
                         <h6>SETTINGS</h6>
                         {/* Settings Links */}
                         {[
-                            { src: preferences, label: "Preferences" },
-                            { src: badge, label: "Fees and Pricing" },
-                            { src: clipboard, label: "Audit Logs" },
-                            { src: messages, label: "System Messages" },
+                            {src: preferences, label: "Preferences"},
+                            {src: badge, label: "Fees and Pricing"},
+                            {src: clipboard, label: "Audit Logs"},
+                            {src: messages, label: "System Messages"},
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label} />
+                                <img src={item.src} alt={item.label}/>
                                 <h5>{item.label}</h5>
                             </div>
                         ))}
                     </div>
                 )}
                 <div className="dropdown-content4">
-                    <img src={logout} alt="Logout" />
+                    <img src={logout} alt="Logout"/>
                     <h5>Logout</h5>
                 </div>
             </div>
