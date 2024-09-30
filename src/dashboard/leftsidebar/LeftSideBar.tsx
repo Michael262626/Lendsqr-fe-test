@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./leftbar.scss";
-import { Link } from "react-router-dom";
 import messages from "../../images/tire.png";
 import logo from "../../images/briefcase.png";
 import logout from "../../images/sign-out.png";
@@ -27,7 +27,8 @@ import drop from "../../images/dropdown.png";
 
 const LeftSideBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const location = useLocation(); // Get current route
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
@@ -45,7 +46,7 @@ const LeftSideBar: React.FC = () => {
             </div>
             <div className={`left-side-bar ${isSidebarOpen ? 'open' : 'closed'}`} data-testid="left-sidebar">
                 <div className="img-txt">
-                    <img src={logo} alt="Logo"/>
+                    <img src={logo} alt="Logo" />
                     <h5>Switch Organisation</h5>
                     <img
                         src={drop}
@@ -59,27 +60,51 @@ const LeftSideBar: React.FC = () => {
                 {isOpen && (
                     <div>
                         <div className="dropdown-content">
-                            <Link to="/userdashboard" className="dropdown-link">
-                                <img src={home} alt="Home"/>
+                            <Link
+                                to="/userdashboard"
+                                className="dropdown-link"
+                            >
+                                <img src={home} alt="Home" />
                                 <h5>Dashboard</h5>
                             </Link>
                         </div>
                         <h6>CUSTOMERS</h6>
                         {/* Customer Links */}
                         {[
-                            {src: user, label: "Users"},
-                            {src: guarantor, label: "Guarantors"},
-                            {src: loans, label: "Loans"},
-                            {src: handshake, label: "Decision Models"},
-                            {src: savings, label: "Savings"},
-                            {src: request, label: "Loan Requests"},
-                            {src: whiteList, label: "Whitelist"},
-                            {src: karma, label: "Karma"},
+                            { src: user, label: "Users", path: "/userdashboard" },
+                            { src: guarantor, label: "Guarantors" },
+                            { src: loans, label: "Loans" },
+                            { src: handshake, label: "Decision Models" },
+                            { src: savings, label: "Savings" },
+                            { src: request, label: "Loan Requests" },
+                            { src: whiteList, label: "Whitelist" },
+                            { src: karma, label: "Karma" },
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label}/>
-                                <h5>{item.label}</h5>
+                                <Link
+                                    to={item.path || '#'} // Use a default placeholder link if no path is provided
+                                    className={`dropdown-link ${location.pathname === item.path ? 'active' : ''}`}
+                                    style={{
+                                        textDecoration: "none",
+                                        color: "inherit",
+                                        width: "100%",
+                                        borderRadius: "3px",
+                                        backgroundColor: location.pathname === item.path ? "#e6f0ff" : "",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        gap: "10px",
+                                        padding: "5px",
+                                    }}
+                                >
+                                    <img
+                                        src={item.src}
+                                        alt={item.label}
+                                    />
+                                    <h5>{item.label}</h5>
+                                </Link>
                             </div>
+
+
                         ))}
 
                         <h6>BUSINESS</h6>
@@ -96,7 +121,7 @@ const LeftSideBar: React.FC = () => {
                             {src: reports, label: "Reports"},
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label}/>
+                                <img src={item.src} alt={item.label} />
                                 <h5>{item.label}</h5>
                             </div>
                         ))}
@@ -104,20 +129,20 @@ const LeftSideBar: React.FC = () => {
                         <h6>SETTINGS</h6>
                         {/* Settings Links */}
                         {[
-                            {src: preferences, label: "Preferences"},
-                            {src: badge, label: "Fees and Pricing"},
-                            {src: clipboard, label: "Audit Logs"},
-                            {src: messages, label: "System Messages"},
+                            { src: preferences, label: "Preferences" },
+                            { src: badge, label: "Fees and Pricing" },
+                            { src: clipboard, label: "Audit Logs" },
+                            { src: messages, label: "System Messages" },
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
-                                <img src={item.src} alt={item.label}/>
+                                <img src={item.src} alt={item.label} />
                                 <h5>{item.label}</h5>
                             </div>
                         ))}
                     </div>
                 )}
                 <div className="dropdown-content4">
-                    <img src={logout} alt="Logout"/>
+                    <img src={logout} alt="Logout" />
                     <h5>Logout</h5>
                 </div>
             </div>
