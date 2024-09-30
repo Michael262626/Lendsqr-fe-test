@@ -51,7 +51,7 @@ const LeftSideBar: React.FC = () => {
                     <img
                         src={drop}
                         alt="Drop"
-                        className="dropdown-toggle"
+                        className={`dropdown-toggle ${isOpen ? 'open' : ''}`}
                         onClick={toggleDropdown}
                     />
                 </div>
@@ -82,18 +82,20 @@ const LeftSideBar: React.FC = () => {
                         ].map((item, index) => (
                             <div className="dropdown-content3" key={index}>
                                 <Link
-                                    to={item.path || '#'} // Use a default placeholder link if no path is provided
+                                    to={item.path || '#'}
                                     className={`dropdown-link ${location.pathname === item.path ? 'active' : ''}`}
                                     style={{
                                         textDecoration: "none",
                                         color: "inherit",
                                         width: "100%",
+                                        height: "35px",
+                                        marginTop: "5px",
                                         borderRadius: "3px",
                                         backgroundColor: location.pathname === item.path ? "#e6f0ff" : "",
                                         display: "flex",
                                         alignItems: "center",
                                         gap: "10px",
-                                        padding: "5px",
+                                        padding: "10px",
                                     }}
                                 >
                                     <img
