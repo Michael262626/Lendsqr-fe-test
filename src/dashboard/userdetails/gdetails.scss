@@ -1,0 +1,119 @@
+.gdetails-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 1px;
+  padding: 10px;
+  width: 90%;
+}
+
+.details_sections {
+  padding: 30px;
+  color: #213f7d;
+  width: 77%;
+  margin-left: 240px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  .details_section {
+    margin-bottom: 3rem;
+
+    h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #1d3557;
+      font-weight: 600;
+    }
+
+    .details_row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+
+      .details_item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        background-color: #f1f5f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+        .details_key {
+          font-weight: bold;
+          color: #213f7d;
+          font-size: 1rem;
+        }
+
+        .details_value {
+          margin-top: 0.5rem;
+          font-size: 0.95rem;
+          color: #495057;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .userdetails{
+    width: 100%;
+  }
+
+
+  .details_sections {
+    margin-left: 0;
+    padding: 22px;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .details_row {
+      gap: 1rem;
+    }
+
+    .details_item {
+      padding: 10px;
+
+      .details_key {
+        font-size: 0.9rem;
+      }
+
+      .details_value {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+//@media (max-width: 576px) {
+//  .gdetails-container {
+//    width: 100%;
+//  }
+//
+//  .details_sections {
+//    padding: 15px;
+//    border-radius: 15px;
+//
+//    h3 {
+//      font-size: 1.25rem;
+//    }
+//
+//    .details_item {
+//      padding: 8px;
+//
+//      .details_key {
+//        font-size: 0.85rem;
+//      }
+//
+//      .details_value {
+//        font-size: 0.85rem;
+//        width: 100%;
+//      }
+//    }

@@ -12,7 +12,9 @@ const Details = () => {
         <div className="details">
             <div className="arrow">
                 <img src={arrow} alt="Go back"/>
-                <h4>Back to users</h4>
+                <Link to="/userdashboard" className="link">
+                    <h4>Back to users</h4>
+                </Link>
             </div>
             <div className="details_header">
                 <h2>User Details</h2>

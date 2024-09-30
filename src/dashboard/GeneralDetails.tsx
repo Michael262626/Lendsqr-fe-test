@@ -1,7 +1,8 @@
 import React from "react";
-import Navbar from "../navbar/Navbar";
-import LeftSideBar from "../leftsidebar/LeftSideBar";
-import GDetails from "./GDetails";
+import Navbar from "./navbar/Navbar";
+import LeftSideBar from "./leftsidebar/LeftSideBar";
+import GDetails from "./userdetails/GDetails";
+import "./dashboard.scss"
 
 const GeneralDetails: React.FC = () => {
     return (
