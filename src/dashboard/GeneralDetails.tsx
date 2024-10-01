@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./navbar/Navbar";
 import LeftSideBar from "./leftsidebar/LeftSideBar";
-import GDetails from "./userdetails/GDetails";
+import Detail from "./userdetails/Detail";
 import "./dashboard.scss"
 
 const GeneralDetails: React.FC = () => {
@@ -13,7 +13,7 @@ const GeneralDetails: React.FC = () => {
                     <LeftSideBar />
                 </div>
                 <div className="main-content">
-                    <GDetails />
+                    <Detail />
                 </div>
             </div>
         </div>

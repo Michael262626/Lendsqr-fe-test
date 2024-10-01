@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./gdetails.scss";
 import UserDetails from "./UserDetails";
 
-// Define the User type based on the expected API response structure
 interface User {
     id: number;
     "FULL NAME": string;
@@ -26,7 +25,7 @@ interface User {
     RELATIONSHIP?: string;
 }
 
-const GDetails: React.FC = () => {
+const Detail: React.FC = () => {
     const [userData, setUserData] = useState<User | null>(null);
     const [guarantorData, setGuarantorData] = useState<User | null>(null);
     const apiURL = "https://api.json-generator.com/templates/XE0WlCxq0FA5/data";
@@ -182,4 +181,4 @@ const GDetails: React.FC = () => {
     );
 };
 
-export default GDetails;
+export default Detail;

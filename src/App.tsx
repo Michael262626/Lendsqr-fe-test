@@ -4,7 +4,7 @@ import './App.css';
 import SignIn from './signup/SignIn';
 import Dashboard from "./dashboard/Dashboard";
 import UserDetails from "./dashboard/userdetails/UserDetails";
-import GDetails from "./dashboard/userdetails/GDetails";
+import Detail from "./dashboard/userdetails/Detail";
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                 <Route path="/signup" element={<SignIn />} />
                 <Route path="/userdashboard" element={<Dashboard />} />
                 <Route path="/user-details" element={<UserDetails />} />
-                <Route path="/general-details" element={<GDetails />} />
+                <Route path="/general-details" element={<Detail />} />
             </Routes>
         </Router>
     );
